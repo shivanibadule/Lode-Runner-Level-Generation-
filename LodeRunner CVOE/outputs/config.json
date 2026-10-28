@@ -1,0 +1,45 @@
+{
+  "best_beta_max": 1.0,
+  "best_epoch": 38,
+  "best_val_loss": 1.6923848898874387,
+  "playability_rate": 0.09,
+  "latent_dim": 32,
+  "cond_dim": 5,
+  "max_condition": [
+    131.0,
+    343.0,
+    141.0,
+    5.0,
+    0.7954545617103577
+  ],
+  "condition_names": [
+    "gold_count",
+    "ladder_count",
+    "rope_count",
+    "enemy_count",
+    "solid_density"
+  ],
+  "sweep": [
+    {
+      "beta_max": 0.25,
+      "best_epoch": 27,
+      "best_val_loss": 1.6867364931512963,
+      "playability_rate": 0.06,
+      "duration_seconds": 18.105761766433716
+    },
+    {
+      "beta_max": 0.5,
+      "best_epoch": 46,
+      "best_val_loss": 1.692299247467996,
+      "playability_rate": 0.04,
+      "duration_seconds": 22.209425926208496
+    },
+    {
+      "beta_max": 1.0,
+      "best_epoch": 38,
+      "best_val_loss": 1.6923848898874387,
+      "playability_rate": 0.09,
+      "duration_seconds": 18.71687412261963
+    }
+  ]
+}

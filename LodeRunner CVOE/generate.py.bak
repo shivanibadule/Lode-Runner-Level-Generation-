@@ -1,0 +1,571 @@
+"""Level generation and repair module for Lode Runner CVAE.
+
+Features:
+- Reachability-aware gold distribution (Sorochan et al. 2021): distributes gold across
+  elevated vertical platforms along the player's navigation tree rather than dropping to the floor.
+- Strict ground floor cap (at most 1 gold on row >= 19).
+- Supports 3 generation modes: 'raw', 'rejection', 'repair'.
+"""
+
+from typing import List, Tuple, Dict, Any, Optional
+import numpy as np
+import torch
+import torch.nn.functional as F
+
+import constants
+import solver
+from model import LodeRunnerCVAE
+
+
+def load_cvae(ckpt_path=constants.OUTPUTS_DIR / "best.pt", device="cpu"):
+    """Load trained CVAE checkpoint and metadata."""
+    ckpt = torch.load(ckpt_path, map_location=device)
+    model = LodeRunnerCVAE(
+        num_classes=ckpt.get("num_classes", 8),
+        cond_dim=ckpt.get("cond_dim", 5),
+        latent_dim=ckpt.get("latent_dim", 32),
+    ).to(device)
+    model.load_state_dict(ckpt["state_dict"])
+    model.eval()
+    max_condition = np.array(ckpt["max_condition"], dtype=np.float32)
+    condition_names = ckpt.get("condition_names", [])
+    return model, max_condition, condition_names
+
+
+def post_process_level(
+    grid: List[str],
+    logits: Optional[torch.Tensor] = None,
+    raw_condition: Optional[np.ndarray] = None,
+) -> List[str]:
+    """Ensure game validity: vertical distribution of gold, exactly one 'M', supported entities."""
+    R = len(grid)
+    C = len(grid[0])
+    cells = [list(row) for row in grid]
+
+    probs = None
+    if logits is not None:
+        probs = F.softmax(logits, dim=0).detach().cpu().numpy() # (8, 22, 32)
+
+    # 1. Player Spawn 'M' constraint: exactly one
+    m_coords = [(r, c) for r in range(R) for c in range(C) if cells[r][c] == "M"]
+    if len(m_coords) > 1:
+        if probs is not None:
+            m_idx = constants.TILE_TO_IDX["M"]
+            confidences = [probs[m_idx, r, c] for (r, c) in m_coords]
+            best_idx = int(np.argmax(confidences))
+            kept_m = m_coords[best_idx]
+        else:
+            kept_m = m_coords[0]
+        for coord in m_coords:
+            if coord != kept_m:
+                cells[coord[0]][coord[1]] = "."
+    elif len(m_coords) == 0:
+        placed = False
+        if probs is not None:
+            m_idx = constants.TILE_TO_IDX["M"]
+            ranked = np.dstack(np.unravel_index(np.argsort(probs[m_idx].ravel())[::-1], (R, C)))[0]
+            for r, c in ranked:
+                if cells[r][c] == "." and r + 1 < R and (cells[r + 1][c] in constants.SOLID or cells[r + 1][c] == "#"):
+                    cells[r][c] = "M"
+                    placed = True
+                    break
+        if not placed:
+            for r in range(R - 2, 0, -1):
+                for c in range(C):
+                    if cells[r][c] == "." and cells[r + 1][c] in constants.SOLID:
+                        cells[r][c] = "M"
+                        placed = True
+                        break
+                if placed:
+                    break
+        if not placed:
+            cells[R - 2][C // 2] = "M"
+
+    # 1b. Prune stray isolated ladders (<2 rungs with no ground below)
+    for r in range(R):
+        for c in range(C):
+            if cells[r][c] == "#":
+                has_ladder_above = r > 0 and cells[r - 1][c] == "#"
+                has_ladder_below = r + 1 < R and cells[r + 1][c] == "#"
+                has_solid_below = r + 1 < R and cells[r + 1][c] in constants.SOLID
+                if not has_ladder_above and not has_ladder_below and not has_solid_below:
+                    cells[r][c] = "."
+
+    # 1c. Clean up isolated single floating blocks (with cluster & functional immunity)
+    for r in range(R - 1):  # Exclude bottom floor row
+        for c in range(C):
+            if cells[r][c] in constants.SOLID:
+                # Count orthogonal solid neighbors
+                neighbors = sum(
+                    1
+                    for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]
+                    if 0 <= r + dr < R
+                    and 0 <= c + dc < C
+                    and cells[r + dr][c + dc] in constants.SOLID
+                )
+                if neighbors == 0:
+                    # Functional Immunity: keep if touching a ladder or supporting hero/gold/enemy
+                    has_ladder = any(
+                        cells[r + dr][c + dc] == "#"
+                        for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]
+                        if 0 <= r + dr < R and 0 <= c + dc < C
+                    )
+                    supports_actor = r > 0 and cells[r - 1][c] in {"G", "E", "M", "-"}
+                    if not has_ladder and not supports_actor:
+                        if r < 9:
+                            # Stray sky noise in unreachable upper air -> prune
+                            cells[r][c] = "."
+                        else:
+                            # In active play tier (rows 9-18) -> extend into a 2-brick ledge if space allows, else prune
+                            if c + 1 < C and cells[r][c + 1] == ".":
+                                cells[r][c + 1] = cells[r][c]
+                            elif c - 1 >= 0 and cells[r][c - 1] == ".":
+                                cells[r][c - 1] = cells[r][c]
+                            else:
+                                cells[r][c] = "."
+
+    # 2. Place / Distribute Ropes '-' anchored to ladders or platforms
+    target_ropes = 18
+    if raw_condition is not None:
+        target_ropes = max(0, int(round(raw_condition[2])))
+
+    if probs is not None and target_ropes > 0:
+        rope_idx = constants.TILE_TO_IDX["-"]
+        ranked_ropes = np.dstack(np.unravel_index(np.argsort(probs[rope_idx].ravel())[::-1], (R, C)))[0]
+        placed_ropes = 0
+
+        for r, c in ranked_ropes:
+            if placed_ropes >= target_ropes:
+                break
+            # Only place ropes in accessible tiers (rows 3 to 18)
+            if not (3 <= r <= 18) or cells[r][c] != ".":
+                continue
+
+            # Check if this cell can anchor to a ladder or platform on left or right
+            anchored_left = (
+                c > 0
+                and (
+                    cells[r][c - 1] in {"#", "-", "b", "B"}
+                    or (r + 1 < R and cells[r + 1][c - 1] in constants.SOLID)
+                )
+            )
+            anchored_right = (
+                c + 1 < C
+                and (
+                    cells[r][c + 1] in {"#", "-", "b", "B"}
+                    or (r + 1 < R and cells[r + 1][c + 1] in constants.SOLID)
+                )
+            )
+
+            if anchored_left or anchored_right:
+                direction = 1 if anchored_left else -1
+                seg_len = min(5, target_ropes - placed_ropes)
+                for step in range(seg_len):
+                    nc = c + step * direction
+                    if 0 <= nc < C and cells[r][nc] == ".":
+                        cells[r][nc] = "-"
+                        placed_ropes += 1
+                    else:
+                        break
+
+    # Temporary level to run reachability from M
+    temp_grid = ["".join(r) for r in cells]
+    init_analysis = solver.analyze(temp_grid)
+    reachable_cells = init_analysis["reachable_cells"]
+
+    # 3. Place / Distribute Gold 'G' across vertical tiers (prevent clustering on floor)
+    target_gold = 16
+    if raw_condition is not None:
+        target_gold = max(1, int(round(raw_condition[0])))
+
+    # Clear any existing gold to re-place with proper vertical spread
+    for r in range(R):
+        for c in range(C):
+            if cells[r][c] == "G":
+                cells[r][c] = "."
+
+    # Candidate supported cells
+    g_idx = constants.TILE_TO_IDX["G"]
+    ranked = np.dstack(np.unravel_index(np.argsort(probs[g_idx].ravel())[::-1], (R, C)))[0] if probs is not None else []
+
+    # Partition candidates by vertical tiers
+    # We prioritize cells that are REACHABLE so gold is solvable!
+    tier_candidates: Dict[str, List[Tuple[int, int]]] = {
+        "upper": [],  # rows 2 - 8
+        "mid": [],    # rows 9 - 14
+        "lower": [],  # rows 15 - 18
+        "floor": [],  # rows 19 - 20 (max 1)
+        "unreached_upper": [],
+    }
+
+    for r, c in ranked:
+        if cells[r][c] in {".", "-"}:
+            is_supp = (
+                cells[r][c] == "-"
+                or (r + 1 < R and (cells[r + 1][c] in constants.SOLID or cells[r + 1][c] == "#"))
+            )
+            if is_supp:
+                is_reach = (r, c) in reachable_cells
+                if is_reach:
+                    if r < 9:
+                        tier_candidates["upper"].append((r, c))
+                    elif r < 15:
+                        tier_candidates["mid"].append((r, c))
+                    elif r < 19:
+                        tier_candidates["lower"].append((r, c))
+                    elif r >= 19 and len(tier_candidates["floor"]) < 1:
+                        tier_candidates["floor"].append((r, c))
+                else:
+                    if r < 18:
+                        tier_candidates["unreached_upper"].append((r, c))
+
+    placed_count = 0
+    # Balanced round-robin placement across upper, mid, lower tiers first
+    active_tiers = ["mid", "upper", "lower", "floor"]
+    tier_idx = 0
+
+    while placed_count < target_gold:
+        tier_name = active_tiers[tier_idx % len(active_tiers)]
+        tier_idx += 1
+
+        if tier_candidates[tier_name]:
+            r, c = tier_candidates[tier_name].pop(0)
+            if cells[r][c] in {".", "-"}:
+                cells[r][c] = "G"
+                placed_count += 1
+        elif not any(tier_candidates[t] for t in ["upper", "mid", "lower", "floor"]):
+            # If all reachable tiers exhausted, pull from unreached upper platforms
+            if tier_candidates["unreached_upper"]:
+                r, c = tier_candidates["unreached_upper"].pop(0)
+                if cells[r][c] in {".", "-"}:
+                    cells[r][c] = "G"
+                    placed_count += 1
+            else:
+                break
+
+    # 3. Enemies ('E') - cap and place on elevated platforms
+    target_enemies = 3
+    if raw_condition is not None:
+        target_enemies = max(0, int(round(raw_condition[3])))
+
+    for r in range(R):
+        for c in range(C):
+            if cells[r][c] == "E":
+                cells[r][c] = "."
+
+    e_idx = constants.TILE_TO_IDX["E"]
+    e_ranked = np.dstack(np.unravel_index(np.argsort(probs[e_idx].ravel())[::-1], (R, C)))[0] if probs is not None else []
+    placed_e = 0
+    for r, c in e_ranked:
+        if cells[r][c] == "." and r + 1 < R and (cells[r + 1][c] in constants.SOLID or cells[r + 1][c] == "#"):
+            # Avoid placing directly on spawn or gold
+            if (r, c) != m_coords and cells[r][c] != "G":
+                cells[r][c] = "E"
+                placed_e += 1
+                if placed_e >= target_enemies:
+                    break
+
+    # 4. Support integrity check (NEVER drop gold to the bottom floor)
+    for r in range(R):
+        for c in range(C):
+            tile = cells[r][c]
+            if tile in {"G", "E", "M"}:
+                is_supported = (
+                    r == R - 1
+                    or cells[r][c] == "-"
+                    or (r + 1 < R and (cells[r + 1][c] in constants.SOLID or cells[r + 1][c] == "#"))
+                )
+                if not is_supported:
+                    if tile == "G" and r + 1 < R and cells[r + 1][c] == ".":
+                        # Support floating gold in-place with a brick
+                        cells[r + 1][c] = "b"
+                    elif r + 2 < R and cells[r + 2][c] in constants.SOLID:
+                        cells[r][c] = "."
+                        cells[r + 1][c] = tile
+                    else:
+                        cells[r][c] = "."
+
+    return ["".join(row) for row in cells]
+
+
+def generate_single_level(
+    model: LodeRunnerCVAE,
+    max_condition: np.ndarray,
+    condition_raw: np.ndarray,
+    seed: Optional[int] = None,
+    device: str = "cpu",
+) -> Tuple[List[str], torch.Tensor]:
+    """Sample z ~ N(0, I) and decode given condition."""
+    if seed is not None:
+        torch.manual_seed(seed)
+        np.random.seed(seed)
+
+    c_norm = condition_raw / np.maximum(max_condition, 1e-6)
+    c_t = torch.from_numpy(c_norm).float().unsqueeze(0).to(device)
+
+    with torch.no_grad():
+        z = torch.randn(1, model.latent_dim, device=device)
+        logits = model.decode(z, c_t)[0] # (8, 22, 32)
+        preds = torch.argmax(logits, dim=0).cpu().numpy()
+
+    grid = [
+        "".join(constants.IDX_TO_TILE[preds[r, c]] for c in range(constants.COLS))
+        for r in range(constants.ROWS)
+    ]
+    post_grid = post_process_level(grid, logits=logits, raw_condition=condition_raw)
+    return post_grid, logits
+
+
+def generate(
+    condition_raw: np.ndarray,
+    mode: str = "raw",
+    seed: Optional[int] = None,
+    model_tuple=None,
+    max_rejection: int = 50,
+) -> Dict[str, Any]:
+    """Generate a level with the chosen mode ('raw', 'rejection', 'repair')."""
+    if model_tuple is None:
+        model, max_cond, _ = load_cvae()
+    else:
+        model, max_cond, _ = model_tuple
+
+    if mode == "raw":
+        grid, logits = generate_single_level(model, max_cond, condition_raw, seed=seed)
+        analysis = solver.analyze(grid)
+        comp = solver.is_completable(grid) if analysis["is_playable"] else False
+        return {
+            "grid": grid,
+            "mode": "raw",
+            "is_playable": analysis["is_playable"],
+            "is_completable": comp,
+            "analysis": analysis,
+            "edits": 0,
+        }
+
+    elif mode == "rejection":
+        best_candidate = None
+        best_score = -1.0
+        best_analysis = None
+        rng_seed = seed if seed is not None else np.random.randint(0, 1000000)
+
+        for attempt in range(max_rejection):
+            cand_seed = rng_seed + attempt
+            grid, _ = generate_single_level(model, max_cond, condition_raw, seed=cand_seed)
+            analysis = solver.analyze(grid)
+
+            gold_rows = set(r for r, c in analysis["reachable_cells"] if grid[r][c] == "G")
+            floor_gold = sum(1 for r in range(19, 22) for c in range(32) if grid[r][c] == "G")
+
+            # Ideal: 100% playable AND at least 3 distinct vertical levels of gold AND <= 1 on floor
+            if analysis["is_playable"] and len(gold_rows) >= 3 and floor_gold <= 1:
+                comp = solver.is_completable(grid)
+                return {
+                    "grid": grid,
+                    "mode": "rejection",
+                    "attempts": attempt + 1,
+                    "is_playable": True,
+                    "is_completable": comp,
+                    "analysis": analysis,
+                    "edits": 0,
+                }
+
+            score = analysis["gold_reachable_fraction"] + 0.15 * min(len(gold_rows), 5) - 0.25 * max(0, floor_gold - 1)
+            if score > best_score:
+                best_score = score
+                best_candidate = grid
+                best_analysis = analysis
+
+        comp = solver.is_completable(best_candidate) if best_analysis["is_playable"] else False
+        return {
+            "grid": best_candidate,
+            "mode": "rejection",
+            "attempts": max_rejection,
+            "is_playable": best_analysis["is_playable"],
+            "is_completable": comp,
+            "analysis": best_analysis,
+            "edits": 0,
+        }
+
+    elif mode == "repair":
+        grid, _ = generate_single_level(model, max_cond, condition_raw, seed=seed)
+        repaired_grid, edits, analysis, comp = repair_level(grid)
+        return {
+            "grid": repaired_grid,
+            "original_grid": grid,
+            "mode": "repair",
+            "is_playable": analysis["is_playable"],
+            "is_completable": comp,
+            "analysis": analysis,
+            "edits": edits,
+            "repair_info": analysis.get("repair_info", {}),
+        }
+    else:
+        raise ValueError(f"Unknown mode: {mode}")
+
+
+def repair_level(
+    level: List[str], max_edits: int = 20
+) -> Tuple[List[str], int, Dict[str, Any], bool]:
+    """Surgical repair algorithm:
+    1. Ensures structural support under floating gold.
+    2. Bridges isolated platforms down to the reachable component using ladder rungs '#'.
+    3. If geometric bridging is blocked by bedrock or budget, relocates stranded gold
+       to elevated, supported reachable cells (preserving gold count and playability).
+    Returns (final_grid, edits_used, final_analysis, is_completable).
+    Detailed diagnostics are stored in final_analysis['repair_info'].
+    """
+    grid = [list(r) for r in solver.normalize_grid(level)]
+    R = len(grid)
+    C = len(grid[0])
+    edits = 0
+    actions_log: List[str] = []
+
+    init_analysis = solver.analyze(grid)
+    if init_analysis["is_playable"]:
+        comp = solver.is_completable(grid)
+        init_analysis["repair_info"] = {
+            "edits": 0,
+            "initial_playable": True,
+            "final_playable": True,
+            "initial_reach_frac": 1.0,
+            "final_reach_frac": 1.0,
+            "actions": ["Level is already 100% playable. 0 edits required."],
+            "summary": "Level is already 100% playable. No repairs required.",
+        }
+        return ["".join(r) for r in grid], 0, init_analysis, comp
+
+    initial_reach_frac = init_analysis["gold_reachable_fraction"]
+    reachable_cells = set(init_analysis["reachable_cells"])
+    unreachable = list(init_analysis["unreachable_gold"])
+
+    # Pass 1: Add solid support underneath floating gold
+    for gr, gc in unreachable:
+        if edits >= max_edits:
+            break
+        if gr + 1 < R and grid[gr + 1][gc] not in constants.SOLID and grid[gr + 1][gc] != "#" and grid[gr][gc] != "-":
+            grid[gr + 1][gc] = "b"
+            edits += 1
+            actions_log.append(f"Added brick support underneath floating gold at row {gr + 1}, col {gc}.")
+
+    # Re-evaluate reachability after support fixes
+    analysis = solver.analyze(grid)
+    reachable_cells = set(analysis["reachable_cells"])
+    unreachable = list(analysis["unreachable_gold"])
+
+    # Pass 2: Ladder Bridging
+    # For each unreachable gold, attempt to connect its platform to a reachable cell below
+    for gr, gc in list(unreachable):
+        if edits >= max_edits or (gr, gc) in reachable_cells:
+            continue
+
+        best_col = None
+        best_r_end = None
+        min_ladder_cost = 999
+
+        for dc in range(0, 5):
+            for sign in [1, -1] if dc > 0 else [1]:
+                col = gc + dc * sign
+                if not (0 <= col < C):
+                    continue
+
+                cost = 0
+                blocked = False
+                target_reach = False
+
+                for r_down in range(gr, min(R - 1, gr + 10)):
+                    if (r_down, col) in reachable_cells:
+                        target_reach = True
+                        best_r_end = r_down
+                        break
+                    tile = grid[r_down][col]
+                    if tile in {"B", "G"}:
+                        blocked = True
+                        break
+                    if tile != "#":
+                        cost += 1
+
+                if target_reach and not blocked and cost < min_ladder_cost and (edits + cost <= max_edits):
+                    min_ladder_cost = cost
+                    best_col = col
+                    break
+            if best_col is not None:
+                break
+
+        if best_col is not None and best_r_end is not None:
+            rungs_added = 0
+            for r_down in range(gr, best_r_end + 1):
+                if grid[r_down][best_col] not in {"#", "G"}:
+                    grid[r_down][best_col] = "#"
+                    edits += 1
+                    rungs_added += 1
+            actions_log.append(f"Built ladder bridge ({rungs_added} rungs) at col {best_col} (rows {gr}–{best_r_end}).")
+            analysis = solver.analyze(grid)
+            reachable_cells = set(analysis["reachable_cells"])
+            unreachable = list(analysis["unreachable_gold"])
+
+    # Pass 3: Fallback Gold Relocation (Guarantees 100% Playability)
+    # If any gold is still unreachable, relocate it to an elevated reachable platform
+    if unreachable:
+        m_coords = None
+        for r in range(R):
+            for c in range(C):
+                if grid[r][c] == "M":
+                    m_coords = (r, c)
+                    break
+
+        # Candidate reachable cells (prioritize elevated rows 3..17 over floor)
+        reachable_candidates = []
+        for r, c in reachable_cells:
+            if (r, c) == m_coords:
+                continue
+            if grid[r][c] in {".", "-"}:
+                is_supp = (
+                    r == R - 1
+                    or grid[r][c] == "-"
+                    or (r + 1 < R and (grid[r + 1][c] in constants.SOLID or grid[r + 1][c] == "#"))
+                )
+                if is_supp:
+                    score = r if r < 19 else r + 50
+                    reachable_candidates.append((score, r, c))
+
+        reachable_candidates.sort(key=lambda x: x[0])
+
+        for gr, gc in unreachable:
+            if grid[gr][gc] != "G":
+                continue
+
+            placed = False
+            while reachable_candidates:
+                _, nr, nc = reachable_candidates.pop(0)
+                if grid[nr][nc] in {".", "-"}:
+                    grid[gr][gc] = "."
+                    grid[nr][nc] = "G"
+                    edits += 2
+                    placed = True
+                    actions_log.append(
+                        f"Relocated stranded gold from unreachable ({gr}, {gc}) to reachable platform at ({nr}, {nc})."
+                    )
+                    break
+            if not placed:
+                break
+
+    final_grid = ["".join(r) for r in grid]
+    final_analysis = solver.analyze(final_grid)
+    comp = solver.is_completable(final_grid) if final_analysis["is_playable"] else False
+
+    summary_str = (
+        f"Repaired level: {edits} edits applied. "
+        f"Reachability: {initial_reach_frac * 100:.0f}% ➔ {final_analysis['gold_reachable_fraction'] * 100:.0f}%."
+    )
+
+    final_analysis["repair_info"] = {
+        "edits": edits,
+        "initial_playable": init_analysis["is_playable"],
+        "final_playable": final_analysis["is_playable"],
+        "initial_reach_frac": initial_reach_frac,
+        "final_reach_frac": final_analysis["gold_reachable_fraction"],
+        "actions": actions_log,
+        "summary": summary_str,
+    }
+
+    return final_grid, edits, final_analysis, comp

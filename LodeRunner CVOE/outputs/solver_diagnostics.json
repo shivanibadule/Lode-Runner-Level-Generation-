@@ -1,0 +1,5479 @@
+{
+  "total_evaluated": 150,
+  "playable_count": 57,
+  "completable_count": 55,
+  "failure_breakdown": {
+    "NO_SOLUTION_FOUND": 92,
+    "INCORRECT_GOAL_TEST": 2,
+    "INVALID_ACTIONS": 1
+  },
+  "levels": [
+    {
+      "file": "Level 1.txt",
+      "spawn_ok": true,
+      "n_gold": 6,
+      "reachable_gold": 6,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 110,
+      "nodes_explored": 262,
+      "nodes_per_gold": 43.666666666666664
+    },
+    {
+      "file": "Level 2.txt",
+      "spawn_ok": true,
+      "n_gold": 8,
+      "reachable_gold": 7,
+      "unreachable_gold": [
+        [
+          16,
+          1
+        ]
+      ],
+      "gold_fraction": 0.875,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 8 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 3.txt",
+      "spawn_ok": true,
+      "n_gold": 7,
+      "reachable_gold": 7,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 147,
+      "nodes_explored": 496,
+      "nodes_per_gold": 70.85714285714286
+    },
+    {
+      "file": "Level 4.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 14,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 192,
+      "nodes_explored": 538,
+      "nodes_per_gold": 38.42857142857143
+    },
+    {
+      "file": "Level 5.txt",
+      "spawn_ok": true,
+      "n_gold": 7,
+      "reachable_gold": 7,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 114,
+      "nodes_explored": 239,
+      "nodes_per_gold": 34.142857142857146
+    },
+    {
+      "file": "Level 6.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 14,
+      "unreachable_gold": [
+        [
+          7,
+          19
+        ],
+        [
+          7,
+          20
+        ]
+      ],
+      "gold_fraction": 0.875,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 7.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 7,
+      "unreachable_gold": [
+        [
+          8,
+          27
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          16,
+          27
+        ],
+        [
+          17,
+          13
+        ]
+      ],
+      "gold_fraction": 0.6363636363636364,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "4 of 11 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 8.txt",
+      "spawn_ok": true,
+      "n_gold": 7,
+      "reachable_gold": 7,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 68,
+      "nodes_explored": 260,
+      "nodes_per_gold": 65.0
+    },
+    {
+      "file": "Level 9.txt",
+      "spawn_ok": true,
+      "n_gold": 4,
+      "reachable_gold": 2,
+      "unreachable_gold": [
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          19
+        ]
+      ],
+      "gold_fraction": 0.5,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 4 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 10.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 10,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 143,
+      "nodes_explored": 282,
+      "nodes_per_gold": 28.2
+    },
+    {
+      "file": "Level 11.txt",
+      "spawn_ok": true,
+      "n_gold": 15,
+      "reachable_gold": 15,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 159,
+      "nodes_explored": 487,
+      "nodes_per_gold": 32.46666666666667
+    },
+    {
+      "file": "Level 12.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 14,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 162,
+      "nodes_explored": 338,
+      "nodes_per_gold": 24.142857142857142
+    },
+    {
+      "file": "Level 13.txt",
+      "spawn_ok": true,
+      "n_gold": 13,
+      "reachable_gold": 13,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 136,
+      "nodes_explored": 452,
+      "nodes_per_gold": 34.76923076923077
+    },
+    {
+      "file": "Level 14.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 12,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 249,
+      "nodes_explored": 974,
+      "nodes_per_gold": 81.16666666666667
+    },
+    {
+      "file": "Level 15.txt",
+      "spawn_ok": true,
+      "n_gold": 21,
+      "reachable_gold": 21,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 208,
+      "nodes_explored": 418,
+      "nodes_per_gold": 19.904761904761905
+    },
+    {
+      "file": "Level 16.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 6,
+      "unreachable_gold": [
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          13,
+          2
+        ]
+      ],
+      "gold_fraction": 0.5454545454545454,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "5 of 11 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 17.txt",
+      "spawn_ok": true,
+      "n_gold": 8,
+      "reachable_gold": 6,
+      "unreachable_gold": [
+        [
+          7,
+          5
+        ],
+        [
+          10,
+          5
+        ]
+      ],
+      "gold_fraction": 0.75,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 8 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 18.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 8,
+      "unreachable_gold": [
+        [
+          16,
+          12
+        ]
+      ],
+      "gold_fraction": 0.8888888888888888,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 9 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 19.txt",
+      "spawn_ok": true,
+      "n_gold": 17,
+      "reachable_gold": 17,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 74,
+      "nodes_explored": 144,
+      "nodes_per_gold": 8.470588235294118
+    },
+    {
+      "file": "Level 20.txt",
+      "spawn_ok": true,
+      "n_gold": 15,
+      "reachable_gold": 15,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 204,
+      "nodes_explored": 477,
+      "nodes_per_gold": 31.8
+    },
+    {
+      "file": "Level 21.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 8,
+      "unreachable_gold": [
+        [
+          9,
+          17
+        ],
+        [
+          9,
+          22
+        ],
+        [
+          14,
+          17
+        ]
+      ],
+      "gold_fraction": 0.7272727272727273,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 11 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 22.txt",
+      "spawn_ok": true,
+      "n_gold": 20,
+      "reachable_gold": 20,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 202,
+      "nodes_explored": 400,
+      "nodes_per_gold": 20.0
+    },
+    {
+      "file": "Level 23.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          14,
+          20
+        ],
+        [
+          14,
+          26
+        ],
+        [
+          14,
+          29
+        ]
+      ],
+      "gold_fraction": 0.8125,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 24.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 11,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 98,
+      "nodes_explored": 250,
+      "nodes_per_gold": 22.727272727272727
+    },
+    {
+      "file": "Level 25.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 9,
+      "unreachable_gold": [
+        [
+          16,
+          15
+        ]
+      ],
+      "gold_fraction": 0.9,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 10 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 26.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 6,
+      "unreachable_gold": [
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          13,
+          3
+        ]
+      ],
+      "gold_fraction": 0.5454545454545454,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "5 of 11 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 27.txt",
+      "spawn_ok": true,
+      "n_gold": 19,
+      "reachable_gold": 11,
+      "unreachable_gold": [
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          27
+        ],
+        [
+          9,
+          19
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          19
+        ],
+        [
+          17,
+          28
+        ],
+        [
+          18,
+          3
+        ]
+      ],
+      "gold_fraction": 0.5789473684210527,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "8 of 19 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 28.txt",
+      "spawn_ok": true,
+      "n_gold": 13,
+      "reachable_gold": 13,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 111,
+      "nodes_explored": 277,
+      "nodes_per_gold": 27.7
+    },
+    {
+      "file": "Level 29.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 2,
+      "unreachable_gold": [
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          10,
+          19
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          27
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          18,
+          29
+        ]
+      ],
+      "gold_fraction": 0.16666666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "10 of 12 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 30.txt",
+      "spawn_ok": true,
+      "n_gold": 19,
+      "reachable_gold": 9,
+      "unreachable_gold": [
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          5,
+          27
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          13,
+          10
+        ],
+        [
+          13,
+          18
+        ],
+        [
+          13,
+          25
+        ]
+      ],
+      "gold_fraction": 0.47368421052631576,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "10 of 19 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 31.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 10,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 98,
+      "nodes_explored": 275,
+      "nodes_per_gold": 27.5
+    },
+    {
+      "file": "Level 32.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 16,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 336,
+      "nodes_explored": 1217,
+      "nodes_per_gold": 76.0625
+    },
+    {
+      "file": "Level 33.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 8,
+      "unreachable_gold": [
+        [
+          19,
+          21
+        ]
+      ],
+      "gold_fraction": 0.8888888888888888,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 9 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 34.txt",
+      "spawn_ok": true,
+      "n_gold": 29,
+      "reachable_gold": 29,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 263,
+      "nodes_explored": 1362,
+      "nodes_per_gold": 46.96551724137931
+    },
+    {
+      "file": "Level 35.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 24,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 241,
+      "nodes_explored": 439,
+      "nodes_per_gold": 18.291666666666668
+    },
+    {
+      "file": "Level 36.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 11,
+      "unreachable_gold": [
+        [
+          14,
+          2
+        ]
+      ],
+      "gold_fraction": 0.9166666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 12 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 37.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 4,
+      "unreachable_gold": [
+        [
+          5,
+          24
+        ],
+        [
+          5,
+          28
+        ],
+        [
+          6,
+          19
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          15,
+          25
+        ]
+      ],
+      "gold_fraction": 0.4,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "6 of 10 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 38.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 7,
+      "unreachable_gold": [
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          25
+        ]
+      ],
+      "gold_fraction": 0.7777777777777778,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 9 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 39.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 9,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 100,
+      "nodes_explored": 209,
+      "nodes_per_gold": 23.22222222222222
+    },
+    {
+      "file": "Level 40.txt",
+      "spawn_ok": true,
+      "n_gold": 15,
+      "reachable_gold": 10,
+      "unreachable_gold": [
+        [
+          5,
+          21
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          17,
+          21
+        ]
+      ],
+      "gold_fraction": 0.6666666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "5 of 15 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 41.txt",
+      "spawn_ok": true,
+      "n_gold": 27,
+      "reachable_gold": 23,
+      "unreachable_gold": [
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "gold_fraction": 0.8518518518518519,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "4 of 27 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 42.txt",
+      "spawn_ok": true,
+      "n_gold": 26,
+      "reachable_gold": 19,
+      "unreachable_gold": [
+        [
+          10,
+          24
+        ],
+        [
+          10,
+          28
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          12,
+          26
+        ],
+        [
+          12,
+          27
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          5
+        ]
+      ],
+      "gold_fraction": 0.7307692307692307,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "7 of 26 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 43.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 11,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 129,
+      "nodes_explored": 571,
+      "nodes_per_gold": 51.90909090909091
+    },
+    {
+      "file": "Level 44.txt",
+      "spawn_ok": true,
+      "n_gold": 6,
+      "reachable_gold": 6,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 43,
+      "nodes_explored": 64,
+      "nodes_per_gold": 10.666666666666666
+    },
+    {
+      "file": "Level 45.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          19,
+          27
+        ]
+      ],
+      "gold_fraction": 0.9285714285714286,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 14 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 46.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          20,
+          29
+        ]
+      ],
+      "gold_fraction": 0.9285714285714286,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 14 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 47.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 10,
+      "unreachable_gold": [
+        [
+          9,
+          28
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          13,
+          30
+        ]
+      ],
+      "gold_fraction": 0.7142857142857143,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "4 of 14 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 48.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 14,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 188,
+      "nodes_explored": 674,
+      "nodes_per_gold": 48.142857142857146
+    },
+    {
+      "file": "Level 49.txt",
+      "spawn_ok": true,
+      "n_gold": 23,
+      "reachable_gold": 16,
+      "unreachable_gold": [
+        [
+          9,
+          13
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          19,
+          9
+        ],
+        [
+          19,
+          11
+        ]
+      ],
+      "gold_fraction": 0.6956521739130435,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "7 of 23 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 50.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 12,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 212,
+      "nodes_explored": 661,
+      "nodes_per_gold": 55.083333333333336
+    },
+    {
+      "file": "Level 51.txt",
+      "spawn_ok": true,
+      "n_gold": 13,
+      "reachable_gold": 13,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": false,
+      "failure_category": "INCORRECT_GOAL_TEST",
+      "failure_reason": "Gold distributed across 2 separate dead-end sink SCCs",
+      "steps": 55,
+      "nodes_explored": 116,
+      "nodes_per_gold": 23.2
+    },
+    {
+      "file": "Level 52.txt",
+      "spawn_ok": true,
+      "n_gold": 7,
+      "reachable_gold": 4,
+      "unreachable_gold": [
+        [
+          1,
+          18
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          16,
+          18
+        ]
+      ],
+      "gold_fraction": 0.5714285714285714,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 7 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 53.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 12,
+      "unreachable_gold": [
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          4,
+          17
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          13
+        ],
+        [
+          16,
+          14
+        ]
+      ],
+      "gold_fraction": 0.5,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "12 of 24 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 54.txt",
+      "spawn_ok": true,
+      "n_gold": 18,
+      "reachable_gold": 18,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 228,
+      "nodes_explored": 372,
+      "nodes_per_gold": 20.666666666666668
+    },
+    {
+      "file": "Level 55.txt",
+      "spawn_ok": true,
+      "n_gold": 29,
+      "reachable_gold": 29,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 252,
+      "nodes_explored": 626,
+      "nodes_per_gold": 21.586206896551722
+    },
+    {
+      "file": "Level 56.txt",
+      "spawn_ok": true,
+      "n_gold": 27,
+      "reachable_gold": 27,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 118,
+      "nodes_explored": 271,
+      "nodes_per_gold": 13.55
+    },
+    {
+      "file": "Level 57.txt",
+      "spawn_ok": true,
+      "n_gold": 27,
+      "reachable_gold": 27,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 200,
+      "nodes_explored": 515,
+      "nodes_per_gold": 19.074074074074073
+    },
+    {
+      "file": "Level 58.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 9,
+      "unreachable_gold": [
+        [
+          16,
+          9
+        ]
+      ],
+      "gold_fraction": 0.9,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 10 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 59.txt",
+      "spawn_ok": true,
+      "n_gold": 20,
+      "reachable_gold": 20,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 379,
+      "nodes_explored": 1098,
+      "nodes_per_gold": 54.9
+    },
+    {
+      "file": "Level 60.txt",
+      "spawn_ok": true,
+      "n_gold": 27,
+      "reachable_gold": 27,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 238,
+      "nodes_explored": 702,
+      "nodes_per_gold": 26.0
+    },
+    {
+      "file": "Level 61.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 15,
+      "unreachable_gold": [
+        [
+          15,
+          19
+        ]
+      ],
+      "gold_fraction": 0.9375,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 62.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 16,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 206,
+      "nodes_explored": 441,
+      "nodes_per_gold": 27.5625
+    },
+    {
+      "file": "Level 63.txt",
+      "spawn_ok": true,
+      "n_gold": 7,
+      "reachable_gold": 6,
+      "unreachable_gold": [
+        [
+          6,
+          14
+        ]
+      ],
+      "gold_fraction": 0.8571428571428571,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 7 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 64.txt",
+      "spawn_ok": true,
+      "n_gold": 42,
+      "reachable_gold": 24,
+      "unreachable_gold": [
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          2,
+          18
+        ],
+        [
+          2,
+          19
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          2,
+          21
+        ],
+        [
+          2,
+          22
+        ],
+        [
+          2,
+          23
+        ],
+        [
+          2,
+          24
+        ],
+        [
+          2,
+          25
+        ],
+        [
+          2,
+          26
+        ]
+      ],
+      "gold_fraction": 0.5714285714285714,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "18 of 42 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 65.txt",
+      "spawn_ok": true,
+      "n_gold": 8,
+      "reachable_gold": 8,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 143,
+      "nodes_explored": 567,
+      "nodes_per_gold": 70.875
+    },
+    {
+      "file": "Level 66.txt",
+      "spawn_ok": true,
+      "n_gold": 4,
+      "reachable_gold": 2,
+      "unreachable_gold": [
+        [
+          10,
+          15
+        ],
+        [
+          10,
+          16
+        ]
+      ],
+      "gold_fraction": 0.5,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 4 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 67.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 8,
+      "unreachable_gold": [
+        [
+          16,
+          6
+        ]
+      ],
+      "gold_fraction": 0.8888888888888888,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 9 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 68.txt",
+      "spawn_ok": true,
+      "n_gold": 39,
+      "reachable_gold": 1,
+      "unreachable_gold": [
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          19
+        ],
+        [
+          10,
+          17
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          19
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          15,
+          23
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          20,
+          5
+        ],
+        [
+          20,
+          7
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          20,
+          9
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          20,
+          14
+        ],
+        [
+          20,
+          16
+        ],
+        [
+          20,
+          17
+        ],
+        [
+          20,
+          18
+        ],
+        [
+          20,
+          19
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          20,
+          22
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          20,
+          26
+        ],
+        [
+          20,
+          27
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          20,
+          29
+        ],
+        [
+          20,
+          30
+        ]
+      ],
+      "gold_fraction": 0.02564102564102564,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "38 of 39 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 69.txt",
+      "spawn_ok": true,
+      "n_gold": 32,
+      "reachable_gold": 28,
+      "unreachable_gold": [
+        [
+          8,
+          18
+        ],
+        [
+          8,
+          19
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          17,
+          22
+        ]
+      ],
+      "gold_fraction": 0.875,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "4 of 32 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 70.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 21,
+      "unreachable_gold": [
+        [
+          14,
+          9
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          18,
+          9
+        ]
+      ],
+      "gold_fraction": 0.875,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 24 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 71.txt",
+      "spawn_ok": true,
+      "n_gold": 32,
+      "reachable_gold": 30,
+      "unreachable_gold": [
+        [
+          12,
+          7
+        ],
+        [
+          12,
+          22
+        ]
+      ],
+      "gold_fraction": 0.9375,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 32 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 72.txt",
+      "spawn_ok": true,
+      "n_gold": 19,
+      "reachable_gold": 18,
+      "unreachable_gold": [
+        [
+          10,
+          31
+        ]
+      ],
+      "gold_fraction": 0.9473684210526315,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 19 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 73.txt",
+      "spawn_ok": true,
+      "n_gold": 17,
+      "reachable_gold": 15,
+      "unreachable_gold": [
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          18
+        ]
+      ],
+      "gold_fraction": 0.8823529411764706,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 17 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 74.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 4,
+      "unreachable_gold": [
+        [
+          6,
+          16
+        ],
+        [
+          12,
+          25
+        ],
+        [
+          12,
+          29
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          13,
+          27
+        ],
+        [
+          17,
+          4
+        ]
+      ],
+      "gold_fraction": 0.4,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "6 of 10 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 75.txt",
+      "spawn_ok": true,
+      "n_gold": 131,
+      "reachable_gold": 39,
+      "unreachable_gold": [
+        [
+          1,
+          26
+        ],
+        [
+          1,
+          27
+        ],
+        [
+          1,
+          28
+        ],
+        [
+          1,
+          29
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          7,
+          27
+        ],
+        [
+          7,
+          29
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          31
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          11,
+          18
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          13,
+          10
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          13,
+          18
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          15,
+          19
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          18
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          16,
+          21
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          17,
+          19
+        ],
+        [
+          17,
+          20
+        ],
+        [
+          17,
+          21
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          18,
+          8
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          18,
+          16
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          18,
+          20
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "gold_fraction": 0.29770992366412213,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "92 of 131 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 76.txt",
+      "spawn_ok": true,
+      "n_gold": 13,
+      "reachable_gold": 12,
+      "unreachable_gold": [
+        [
+          3,
+          21
+        ]
+      ],
+      "gold_fraction": 0.9230769230769231,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 13 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 77.txt",
+      "spawn_ok": true,
+      "n_gold": 48,
+      "reachable_gold": 12,
+      "unreachable_gold": [
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          8,
+          19
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          8,
+          22
+        ],
+        [
+          8,
+          23
+        ],
+        [
+          8,
+          24
+        ],
+        [
+          8,
+          25
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          13
+        ],
+        [
+          16,
+          14
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          18
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          16,
+          21
+        ],
+        [
+          16,
+          22
+        ],
+        [
+          16,
+          23
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          16,
+          25
+        ]
+      ],
+      "gold_fraction": 0.25,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "36 of 48 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 78.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 11,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 201,
+      "nodes_explored": 569,
+      "nodes_per_gold": 51.72727272727273
+    },
+    {
+      "file": "Level 79.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 10,
+      "unreachable_gold": [
+        [
+          5,
+          31
+        ],
+        [
+          9,
+          30
+        ]
+      ],
+      "gold_fraction": 0.8333333333333334,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 12 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 80.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          8,
+          20
+        ]
+      ],
+      "gold_fraction": 0.8125,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 81.txt",
+      "spawn_ok": true,
+      "n_gold": 32,
+      "reachable_gold": 24,
+      "unreachable_gold": [
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          17
+        ],
+        [
+          9,
+          18
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          11,
+          18
+        ]
+      ],
+      "gold_fraction": 0.75,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "8 of 32 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 82.txt",
+      "spawn_ok": true,
+      "n_gold": 19,
+      "reachable_gold": 19,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 209,
+      "nodes_explored": 949,
+      "nodes_per_gold": 49.94736842105263
+    },
+    {
+      "file": "Level 83.txt",
+      "spawn_ok": true,
+      "n_gold": 19,
+      "reachable_gold": 19,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 311,
+      "nodes_explored": 1299,
+      "nodes_per_gold": 68.36842105263158
+    },
+    {
+      "file": "Level 84.txt",
+      "spawn_ok": true,
+      "n_gold": 17,
+      "reachable_gold": 12,
+      "unreachable_gold": [
+        [
+          6,
+          28
+        ],
+        [
+          8,
+          28
+        ],
+        [
+          12,
+          31
+        ],
+        [
+          14,
+          28
+        ],
+        [
+          16,
+          30
+        ]
+      ],
+      "gold_fraction": 0.7058823529411765,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "5 of 17 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 85.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 11,
+      "unreachable_gold": [
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          18,
+          9
+        ]
+      ],
+      "gold_fraction": 0.6875,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "5 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 86.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 3,
+      "unreachable_gold": [
+        [
+          12,
+          19
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          19,
+          7
+        ]
+      ],
+      "gold_fraction": 0.3,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "7 of 10 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 87.txt",
+      "spawn_ok": true,
+      "n_gold": 72,
+      "reachable_gold": 72,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 211,
+      "nodes_explored": 436,
+      "nodes_per_gold": 6.055555555555555
+    },
+    {
+      "file": "Level 88.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 5,
+      "unreachable_gold": [
+        [
+          2,
+          16
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          19,
+          13
+        ]
+      ],
+      "gold_fraction": 0.3125,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "11 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 89.txt",
+      "spawn_ok": true,
+      "n_gold": 36,
+      "reachable_gold": 31,
+      "unreachable_gold": [
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          10,
+          28
+        ]
+      ],
+      "gold_fraction": 0.8611111111111112,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "5 of 36 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 90.txt",
+      "spawn_ok": true,
+      "n_gold": 19,
+      "reachable_gold": 15,
+      "unreachable_gold": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          13,
+          8
+        ]
+      ],
+      "gold_fraction": 0.7894736842105263,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "4 of 19 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 91.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 9,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 83,
+      "nodes_explored": 132,
+      "nodes_per_gold": 14.666666666666666
+    },
+    {
+      "file": "Level 92.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 3,
+      "unreachable_gold": [
+        [
+          1,
+          17
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          20
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          12,
+          27
+        ],
+        [
+          20,
+          3
+        ]
+      ],
+      "gold_fraction": 0.3,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "7 of 10 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 93.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 10,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 163,
+      "nodes_explored": 1134,
+      "nodes_per_gold": 113.4
+    },
+    {
+      "file": "Level 94.txt",
+      "spawn_ok": true,
+      "n_gold": 43,
+      "reachable_gold": 41,
+      "unreachable_gold": [
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "gold_fraction": 0.9534883720930233,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 43 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 95.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 12,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 58,
+      "nodes_explored": 111,
+      "nodes_per_gold": 22.2
+    },
+    {
+      "file": "Level 96.txt",
+      "spawn_ok": true,
+      "n_gold": 23,
+      "reachable_gold": 23,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 216,
+      "nodes_explored": 467,
+      "nodes_per_gold": 20.304347826086957
+    },
+    {
+      "file": "Level 97.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 24,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 110,
+      "nodes_explored": 263,
+      "nodes_per_gold": 10.958333333333334
+    },
+    {
+      "file": "Level 98.txt",
+      "spawn_ok": true,
+      "n_gold": 21,
+      "reachable_gold": 14,
+      "unreachable_gold": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          10,
+          27
+        ],
+        [
+          10,
+          29
+        ],
+        [
+          18,
+          16
+        ],
+        [
+          18,
+          17
+        ]
+      ],
+      "gold_fraction": 0.6666666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "7 of 21 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 99.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 11,
+      "unreachable_gold": [
+        [
+          3,
+          26
+        ]
+      ],
+      "gold_fraction": 0.9166666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 12 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 100.txt",
+      "spawn_ok": true,
+      "n_gold": 25,
+      "reachable_gold": 25,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": false,
+      "failure_category": "INCORRECT_GOAL_TEST",
+      "failure_reason": "Gold distributed across 6 separate dead-end sink SCCs",
+      "steps": 94,
+      "nodes_explored": 325,
+      "nodes_per_gold": 36.111111111111114
+    },
+    {
+      "file": "Level 101.txt",
+      "spawn_ok": true,
+      "n_gold": 23,
+      "reachable_gold": 23,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 219,
+      "nodes_explored": 850,
+      "nodes_per_gold": 36.95652173913044
+    },
+    {
+      "file": "Level 102.txt",
+      "spawn_ok": true,
+      "n_gold": 15,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          18,
+          27
+        ],
+        [
+          18,
+          29
+        ]
+      ],
+      "gold_fraction": 0.8666666666666667,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 15 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 103.txt",
+      "spawn_ok": true,
+      "n_gold": 21,
+      "reachable_gold": 20,
+      "unreachable_gold": [
+        [
+          6,
+          0
+        ]
+      ],
+      "gold_fraction": 0.9523809523809523,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 21 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 104.txt",
+      "spawn_ok": true,
+      "n_gold": 7,
+      "reachable_gold": 5,
+      "unreachable_gold": [
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          28
+        ]
+      ],
+      "gold_fraction": 0.7142857142857143,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 7 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 105.txt",
+      "spawn_ok": true,
+      "n_gold": 25,
+      "reachable_gold": 25,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 179,
+      "nodes_explored": 687,
+      "nodes_per_gold": 27.48
+    },
+    {
+      "file": "Level 106.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 9,
+      "unreachable_gold": [
+        [
+          8,
+          3
+        ],
+        [
+          15,
+          24
+        ]
+      ],
+      "gold_fraction": 0.8181818181818182,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 11 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 107.txt",
+      "spawn_ok": true,
+      "n_gold": 42,
+      "reachable_gold": 18,
+      "unreachable_gold": [
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          17
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          12,
+          21
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          18,
+          12
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          18,
+          14
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          18,
+          20
+        ]
+      ],
+      "gold_fraction": 0.42857142857142855,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "24 of 42 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 108.txt",
+      "spawn_ok": true,
+      "n_gold": 46,
+      "reachable_gold": 44,
+      "unreachable_gold": [
+        [
+          6,
+          20
+        ],
+        [
+          9,
+          4
+        ]
+      ],
+      "gold_fraction": 0.9565217391304348,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 46 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 109.txt",
+      "spawn_ok": true,
+      "n_gold": 15,
+      "reachable_gold": 15,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 191,
+      "nodes_explored": 730,
+      "nodes_per_gold": 48.666666666666664
+    },
+    {
+      "file": "Level 110.txt",
+      "spawn_ok": true,
+      "n_gold": 41,
+      "reachable_gold": 9,
+      "unreachable_gold": [
+        [
+          5,
+          13
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          6,
+          24
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          23
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          22
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          21
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          26
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          11,
+          19
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          25
+        ],
+        [
+          12,
+          26
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          14,
+          23
+        ],
+        [
+          14,
+          26
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          16,
+          22
+        ],
+        [
+          16,
+          26
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          18,
+          26
+        ],
+        [
+          20,
+          15
+        ],
+        [
+          20,
+          16
+        ],
+        [
+          20,
+          22
+        ],
+        [
+          20,
+          26
+        ]
+      ],
+      "gold_fraction": 0.21951219512195122,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "32 of 41 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 111.txt",
+      "spawn_ok": true,
+      "n_gold": 22,
+      "reachable_gold": 22,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 417,
+      "nodes_explored": 2399,
+      "nodes_per_gold": 109.04545454545455
+    },
+    {
+      "file": "Level 112.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 6,
+      "unreachable_gold": [
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          18
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          30
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          15,
+          30
+        ]
+      ],
+      "gold_fraction": 0.42857142857142855,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "8 of 14 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 113.txt",
+      "spawn_ok": true,
+      "n_gold": 17,
+      "reachable_gold": 4,
+      "unreachable_gold": [
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          23
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          20,
+          12
+        ]
+      ],
+      "gold_fraction": 0.23529411764705882,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "13 of 17 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 114.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          17,
+          0
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          17,
+          2
+        ]
+      ],
+      "gold_fraction": 0.8125,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 115.txt",
+      "spawn_ok": true,
+      "n_gold": 28,
+      "reachable_gold": 10,
+      "unreachable_gold": [
+        [
+          4,
+          27
+        ],
+        [
+          4,
+          29
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          6,
+          22
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          28
+        ],
+        [
+          13,
+          26
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          20,
+          27
+        ]
+      ],
+      "gold_fraction": 0.35714285714285715,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "18 of 28 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 116.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 24,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 318,
+      "nodes_explored": 1665,
+      "nodes_per_gold": 69.375
+    },
+    {
+      "file": "Level 117.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 24,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 211,
+      "nodes_explored": 650,
+      "nodes_per_gold": 27.083333333333332
+    },
+    {
+      "file": "Level 118.txt",
+      "spawn_ok": true,
+      "n_gold": 30,
+      "reachable_gold": 30,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 528,
+      "nodes_explored": 2957,
+      "nodes_per_gold": 98.56666666666666
+    },
+    {
+      "file": "Level 119.txt",
+      "spawn_ok": true,
+      "n_gold": 21,
+      "reachable_gold": 21,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 125,
+      "nodes_explored": 335,
+      "nodes_per_gold": 23.928571428571427
+    },
+    {
+      "file": "Level 120.txt",
+      "spawn_ok": true,
+      "n_gold": 20,
+      "reachable_gold": 8,
+      "unreachable_gold": [
+        [
+          10,
+          8
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          14,
+          21
+        ],
+        [
+          14,
+          23
+        ],
+        [
+          14,
+          24
+        ],
+        [
+          14,
+          25
+        ],
+        [
+          14,
+          29
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          17,
+          26
+        ],
+        [
+          19,
+          26
+        ],
+        [
+          20,
+          7
+        ],
+        [
+          20,
+          27
+        ]
+      ],
+      "gold_fraction": 0.4,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "12 of 20 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 121.txt",
+      "spawn_ok": true,
+      "n_gold": 26,
+      "reachable_gold": 26,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 202,
+      "nodes_explored": 699,
+      "nodes_per_gold": 26.884615384615383
+    },
+    {
+      "file": "Level 122.txt",
+      "spawn_ok": true,
+      "n_gold": 11,
+      "reachable_gold": 0,
+      "unreachable_gold": [
+        [
+          7,
+          18
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          31
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          13,
+          24
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          16,
+          14
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "gold_fraction": 0.0,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "11 of 11 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 123.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 11,
+      "unreachable_gold": [
+        [
+          14,
+          2
+        ]
+      ],
+      "gold_fraction": 0.9166666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 12 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 124.txt",
+      "spawn_ok": true,
+      "n_gold": 22,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          12,
+          25
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          13,
+          18
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          15,
+          29
+        ],
+        [
+          20,
+          28
+        ]
+      ],
+      "gold_fraction": 0.5909090909090909,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "9 of 22 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 125.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 6,
+      "unreachable_gold": [
+        [
+          8,
+          2
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          25
+        ],
+        [
+          13,
+          26
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          30
+        ],
+        [
+          17,
+          31
+        ],
+        [
+          18,
+          2
+        ]
+      ],
+      "gold_fraction": 0.375,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "10 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 126.txt",
+      "spawn_ok": true,
+      "n_gold": 41,
+      "reachable_gold": 41,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 477,
+      "nodes_explored": 1351,
+      "nodes_per_gold": 32.951219512195124
+    },
+    {
+      "file": "Level 127.txt",
+      "spawn_ok": true,
+      "n_gold": 10,
+      "reachable_gold": 8,
+      "unreachable_gold": [
+        [
+          10,
+          21
+        ],
+        [
+          10,
+          25
+        ]
+      ],
+      "gold_fraction": 0.8,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 10 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 128.txt",
+      "spawn_ok": true,
+      "n_gold": 17,
+      "reachable_gold": 0,
+      "unreachable_gold": [
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          20
+        ],
+        [
+          6,
+          28
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          26
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          18,
+          8
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          18,
+          16
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "gold_fraction": 0.0,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "17 of 17 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 129.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 23,
+      "unreachable_gold": [
+        [
+          14,
+          11
+        ]
+      ],
+      "gold_fraction": 0.9583333333333334,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 24 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 130.txt",
+      "spawn_ok": true,
+      "n_gold": 12,
+      "reachable_gold": 11,
+      "unreachable_gold": [
+        [
+          20,
+          3
+        ]
+      ],
+      "gold_fraction": 0.9166666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 12 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 131.txt",
+      "spawn_ok": true,
+      "n_gold": 14,
+      "reachable_gold": 1,
+      "unreachable_gold": [
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          18,
+          1
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          18,
+          15
+        ],
+        [
+          18,
+          23
+        ],
+        [
+          18,
+          29
+        ],
+        [
+          18,
+          30
+        ]
+      ],
+      "gold_fraction": 0.07142857142857142,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "13 of 14 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 132.txt",
+      "spawn_ok": true,
+      "n_gold": 36,
+      "reachable_gold": 36,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 141,
+      "nodes_explored": 307,
+      "nodes_per_gold": 8.527777777777779
+    },
+    {
+      "file": "Level 133.txt",
+      "spawn_ok": true,
+      "n_gold": 45,
+      "reachable_gold": 36,
+      "unreachable_gold": [
+        [
+          11,
+          26
+        ],
+        [
+          11,
+          27
+        ],
+        [
+          14,
+          28
+        ],
+        [
+          14,
+          29
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          17,
+          30
+        ],
+        [
+          17,
+          31
+        ]
+      ],
+      "gold_fraction": 0.8,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "9 of 45 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 134.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 9,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 126,
+      "nodes_explored": 443,
+      "nodes_per_gold": 49.22222222222222
+    },
+    {
+      "file": "Level 135.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 15,
+      "unreachable_gold": [
+        [
+          16,
+          4
+        ]
+      ],
+      "gold_fraction": 0.9375,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 136.txt",
+      "spawn_ok": true,
+      "n_gold": 22,
+      "reachable_gold": 4,
+      "unreachable_gold": [
+        [
+          1,
+          22
+        ],
+        [
+          1,
+          23
+        ],
+        [
+          1,
+          24
+        ],
+        [
+          1,
+          25
+        ],
+        [
+          1,
+          26
+        ],
+        [
+          1,
+          27
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          2,
+          16
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          2,
+          18
+        ],
+        [
+          2,
+          19
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ]
+      ],
+      "gold_fraction": 0.18181818181818182,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "18 of 22 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 137.txt",
+      "spawn_ok": true,
+      "n_gold": 28,
+      "reachable_gold": 10,
+      "unreachable_gold": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          17
+        ],
+        [
+          0,
+          20
+        ],
+        [
+          0,
+          26
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          17
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          13,
+          18
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          19,
+          0
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          19,
+          10
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          19,
+          23
+        ],
+        [
+          19,
+          29
+        ]
+      ],
+      "gold_fraction": 0.35714285714285715,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "18 of 28 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 138.txt",
+      "spawn_ok": true,
+      "n_gold": 17,
+      "reachable_gold": 0,
+      "unreachable_gold": [
+        [
+          6,
+          19
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          11,
+          18
+        ],
+        [
+          11,
+          22
+        ],
+        [
+          11,
+          23
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          19,
+          30
+        ],
+        [
+          20,
+          9
+        ],
+        [
+          21,
+          19
+        ],
+        [
+          21,
+          30
+        ]
+      ],
+      "gold_fraction": 0.0,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "17 of 17 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 139.txt",
+      "spawn_ok": true,
+      "n_gold": 13,
+      "reachable_gold": 7,
+      "unreachable_gold": [
+        [
+          14,
+          6
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          14,
+          11
+        ]
+      ],
+      "gold_fraction": 0.5384615384615384,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "6 of 13 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 140.txt",
+      "spawn_ok": true,
+      "n_gold": 9,
+      "reachable_gold": 8,
+      "unreachable_gold": [
+        [
+          12,
+          16
+        ]
+      ],
+      "gold_fraction": 0.8888888888888888,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 9 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 141.txt",
+      "spawn_ok": true,
+      "n_gold": 6,
+      "reachable_gold": 1,
+      "unreachable_gold": [
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          14,
+          23
+        ]
+      ],
+      "gold_fraction": 0.16666666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "5 of 6 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 142.txt",
+      "spawn_ok": true,
+      "n_gold": 34,
+      "reachable_gold": 18,
+      "unreachable_gold": [
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          29
+        ],
+        [
+          11,
+          30
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          13,
+          29
+        ],
+        [
+          13,
+          30
+        ],
+        [
+          15,
+          29
+        ],
+        [
+          15,
+          30
+        ],
+        [
+          17,
+          29
+        ],
+        [
+          17,
+          30
+        ],
+        [
+          21,
+          2
+        ],
+        [
+          21,
+          7
+        ]
+      ],
+      "gold_fraction": 0.5294117647058824,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "16 of 34 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 143.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 13,
+      "unreachable_gold": [
+        [
+          16,
+          14
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          20,
+          14
+        ]
+      ],
+      "gold_fraction": 0.8125,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 144.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 22,
+      "unreachable_gold": [
+        [
+          13,
+          23
+        ],
+        [
+          13,
+          24
+        ]
+      ],
+      "gold_fraction": 0.9166666666666666,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "2 of 24 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 145.txt",
+      "spawn_ok": true,
+      "n_gold": 13,
+      "reachable_gold": 13,
+      "unreachable_gold": [],
+      "gold_fraction": 1.0,
+      "is_playable": true,
+      "is_completable": true,
+      "failure_category": null,
+      "failure_reason": null,
+      "steps": 138,
+      "nodes_explored": 465,
+      "nodes_per_gold": 35.76923076923077
+    },
+    {
+      "file": "Level 146.txt",
+      "spawn_ok": true,
+      "n_gold": 24,
+      "reachable_gold": 21,
+      "unreachable_gold": [
+        [
+          17,
+          7
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          17,
+          18
+        ]
+      ],
+      "gold_fraction": 0.875,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "3 of 24 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 147.txt",
+      "spawn_ok": true,
+      "n_gold": 8,
+      "reachable_gold": 7,
+      "unreachable_gold": [
+        [
+          19,
+          19
+        ]
+      ],
+      "gold_fraction": 0.875,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "1 of 8 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 148.txt",
+      "spawn_ok": true,
+      "n_gold": 16,
+      "reachable_gold": 0,
+      "unreachable_gold": [
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          5,
+          19
+        ],
+        [
+          5,
+          20
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          22
+        ],
+        [
+          6,
+          23
+        ],
+        [
+          6,
+          24
+        ],
+        [
+          6,
+          25
+        ],
+        [
+          6,
+          26
+        ]
+      ],
+      "gold_fraction": 0.0,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "16 of 16 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 149.txt",
+      "spawn_ok": true,
+      "n_gold": 25,
+      "reachable_gold": 1,
+      "unreachable_gold": [
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          21
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          28
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          14,
+          29
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          28
+        ],
+        [
+          16,
+          3
+        ],
+        [
+          16,
+          27
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          17,
+          26
+        ],
+        [
+          18,
+          5
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          19,
+          24
+        ],
+        [
+          20,
+          0
+        ],
+        [
+          20,
+          7
+        ],
+        [
+          20,
+          23
+        ],
+        [
+          20,
+          31
+        ]
+      ],
+      "gold_fraction": 0.04,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "NO_SOLUTION_FOUND",
+      "failure_reason": "24 of 25 gold pieces are unreachable",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    },
+    {
+      "file": "Level 150.txt",
+      "spawn_ok": false,
+      "n_gold": 70,
+      "reachable_gold": 0,
+      "unreachable_gold": [
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          31
+        ],
+        [
+          3,
+          31
+        ],
+        [
+          4,
+          31
+        ],
+        [
+          5,
+          31
+        ],
+        [
+          6,
+          31
+        ],
+        [
+          7,
+          31
+        ],
+        [
+          8,
+          31
+        ],
+        [
+          9,
+          31
+        ],
+        [
+          10,
+          31
+        ],
+        [
+          11,
+          31
+        ],
+        [
+          12,
+          31
+        ],
+        [
+          13,
+          31
+        ],
+        [
+          14,
+          31
+        ],
+        [
+          15,
+          31
+        ],
+        [
+          16,
+          31
+        ],
+        [
+          17,
+          31
+        ],
+        [
+          18,
+          3
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          18,
+          5
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          18,
+          8
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          18,
+          12
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          18,
+          14
+        ],
+        [
+          18,
+          15
+        ],
+        [
+          18,
+          16
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          18,
+          20
+        ],
+        [
+          18,
+          21
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          18,
+          23
+        ],
+        [
+          18,
+          24
+        ],
+        [
+          18,
+          31
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          20,
+          5
+        ],
+        [
+          20,
+          6
+        ],
+        [
+          20,
+          7
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          20,
+          9
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          20,
+          14
+        ],
+        [
+          20,
+          15
+        ],
+        [
+          20,
+          16
+        ],
+        [
+          20,
+          17
+        ],
+        [
+          20,
+          18
+        ],
+        [
+          20,
+          19
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          20,
+          22
+        ],
+        [
+          20,
+          23
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          20,
+          26
+        ],
+        [
+          20,
+          27
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          20,
+          29
+        ],
+        [
+          20,
+          30
+        ]
+      ],
+      "gold_fraction": 0.0,
+      "is_playable": false,
+      "is_completable": false,
+      "failure_category": "INVALID_ACTIONS",
+      "failure_reason": "Expected exactly 1 spawn 'M', but found 0",
+      "steps": null,
+      "nodes_explored": null,
+      "nodes_per_gold": null
+    }
+  ]
+}

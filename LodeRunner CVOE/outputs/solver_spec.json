@@ -1,0 +1,29 @@
+{
+  "state_representation": "(row, col) integer coordinates within 22x32 grid",
+  "heuristic": "Manhattan distance to closest remaining uncollected gold piece: min(|r - gr| + |c - gc|)",
+  "movement_rules": {
+    "actions": [
+      "left",
+      "right",
+      "climb_up",
+      "climb_down",
+      "fall"
+    ],
+    "support": "A cell (r, c) is supported if current cell is '#' or '-', or cell below (r+1, c) is solid ('B', 'b') or '#', or r == ROWS-1 (bottom screen boundary).",
+    "transitions": {
+      "not_supported": "Can only fall straight down (r+1, c) into any non-solid cell.",
+      "supported": "Can move left (r, c-1) and right (r, c+1) into any non-solid cell.",
+      "on_ladder": "Can move up (r-1, c) and down (r+1, c) into any non-solid cell (includes stepping up out of ladder top).",
+      "on_rope": "Can drop down (r+1, c) into any non-solid cell.",
+      "above_ladder": "Standing directly above a ladder cell, can step down (r+1, c) into '#'."
+    },
+    "digging": "Standing on a supported cell (r, c), player can dig diagonally down-left (r+1, c-1) or down-right (r+1, c+1) if target is 'b' and adjacent cell (r, c-1) or (r, c+1) is clear. Monotone fixpoint expands opened cells until saturation.",
+    "enemies": "Treated as open air in pathfinding pursuant to Sorochan et al. (FDG 2021) to prevent instant-death false negatives."
+  },
+  "failure_categories": [
+    "INVALID_ACTIONS",
+    "NO_SOLUTION_FOUND",
+    "INCORRECT_GOAL_TEST",
+    "TIMEOUT"
+  ]
+}
